@@ -6,7 +6,7 @@ import { HeroController } from "./hero.controller";
 const router = Router();
 // Hero content post route
 router.post(
-  "/hero",
+  "/",
   validationRequest(HeroValidationSchema.createHeroSchema),
   HeroController.createHeroContent
 );

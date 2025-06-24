@@ -5,7 +5,7 @@ import router from "./app/routes";
 const app: Application = express();
 // using parser
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: "", credentials: true }));
 app.use(cookieParser());
 // connect with application route
 app.use("/api", router);

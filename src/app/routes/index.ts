@@ -4,7 +4,7 @@ import { heroRouter } from "../modules/hero/hero.route";
 const router = Router();
 const moduleRoutes = [
   {
-    path: "/hero",
+    path: "/hero-content",
     route: heroRouter,
   },
 ];
