@@ -7,7 +7,7 @@ const app: Application = express();
 app.use(express.json());
 app.use(cors({ origin: "", credentials: true }));
 app.use(cookieParser());
-// connect with application route
+// connect with application router
 app.use("/api", router);
 const testServer = async (req: Request, res: Response) => {
   res.send({
