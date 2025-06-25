@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { StatusCodes } from 'http-status-codes';
 import AppError from '../../error/appError';
 import { IHero } from './hero.interface';
 import { Hero } from './hero.model';
+import { sendImageToCloudinary } from '../../utils/sendImageToCloudinary';
 //Create Hero content into db
-const createHeroContentIntoDB = async (payload: IHero) => {
+const createHeroContentIntoDB = async (file: any, payload: IHero) => {
   const isHeroContentExists = await Hero.findOne({
     title: payload.title,
   });
@@ -14,6 +16,10 @@ const createHeroContentIntoDB = async (payload: IHero) => {
       'This hero content is already exists!'
     );
   }
+  const imageName = payload?.title;
+  const path = file?.path;
+  const { secure_url }: any = await sendImageToCloudinary(imageName, path);
+  payload.backgroundImage = secure_url;
   const result = await Hero.create(payload);
   return result;
 };

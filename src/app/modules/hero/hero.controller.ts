@@ -5,7 +5,7 @@ import { HeroService } from './hero.service';
 
 // Create hero content
 const createHeroContent = catchAsynch(async (req, res) => {
-  const result = await HeroService.createHeroContentIntoDB(req.body);
+  const result = await HeroService.createHeroContentIntoDB(req.file,req.body);
   sendResponse(res, {
     statusCode: StatusCodes.CREATED,
     success: true,
