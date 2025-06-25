@@ -8,6 +8,7 @@ const createServiceValidationSchema = z.object({
       .trim()
       .min(1, { message: 'Short description is required' }),
   }),
+  isDeleted: z.boolean().optional().default(false),
 });
 
 const updateServiceValidationSchema = z.object({
@@ -22,6 +23,7 @@ const updateServiceValidationSchema = z.object({
       .trim()
       .min(1, { message: 'Short description is required' })
       .optional(),
+    isDeleted: z.boolean().optional().default(false),
   }),
 });
 

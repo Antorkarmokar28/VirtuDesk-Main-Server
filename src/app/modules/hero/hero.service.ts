@@ -46,7 +46,7 @@ const getSingleHeroContent = async (_id: string) => {
 };
 // Delete hero content from the db
 const deletHeroContentFromDB = async (_id: string) => {
-  const heroContent = await Hero.findByIdAndDelete(_id);
+  const heroContent = await Hero.findByIdAndDelete(_id, { new: true });
   if (!heroContent) {
     throw new AppError(
       StatusCodes.NOT_FOUND,

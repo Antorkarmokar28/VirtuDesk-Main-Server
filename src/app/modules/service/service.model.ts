@@ -5,6 +5,7 @@ const serviceSchema = new Schema<IService>(
   {
     title: { type: String, required: true, trim: true },
     shortDescription: { type: String, required: true, trim: true },
+    isDeleted: {type: Boolean, default: false}
   },
   {
     timestamps: true,
