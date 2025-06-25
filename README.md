@@ -33,4 +33,14 @@ virtudesk-backend/
 git clone https://github.com/Antorkarmokar28/VirtuDesk-Main-Server.git
 cd virtudesk-backend
 ```
-
+```
+npm install
+```
+```
+cp .env.example .env
+# Fill in your MongoDB URI and JWT secret
+```
+```
+npm run start:dev
+```
+## Server will start at http://localhost:5001
